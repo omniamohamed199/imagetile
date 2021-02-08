@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+.k-dialog-wrapper
+{
+    width:auto !important;
+  
+}
+image-drawing
+{
+    justify-content: center !important;
+}
+image-drawing .toolbar {
+    display: block !important;
+}
+.buttons
+{
+    flex-direction: inherit !important;
+}
+.k-window-content{
+    display: flex !important;
+    padding: 0px !important;
+}
+.k-dialog-wrapper .k-dialog
+{
+    height: 100%;
+}

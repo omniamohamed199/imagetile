@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/CanvasShredder.js",
+              "src/assets/Hammer.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,9 +98,15 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/CanvasShredder.js",
+              "src/assets/Hammer.js"
+            ]
           }
         },
         "lint": {
@@ -123,6 +135,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "imagetile"
 }
