@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { ImageDrawingModule } from 'ngx-image-drawing';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImagemapComponent } from './imagemap/imagemap.component';
 
 
 
@@ -23,7 +24,8 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ImagemapComponent
   ],
   imports: [
     BrowserModule,

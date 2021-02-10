@@ -1,16 +1,25 @@
-<div>
+<!-- <div>
   <div id="preview-area">
     <div id="select-position"></div>
-    <canvas id="dst-canvas" width="256" height="256" ></canvas>
+    <canvas id="dst-canvas" width="256" height="256" hidden></canvas>
   </div>
-</div>
-
-
-
-
-<kendo-dialog  *ngIf="open"  [minWidth]="250" [width]="450">
-  <image-drawing [src]="this.imageUrl" outputMimeType="'image/jpeg'"
-  outputQuality="0.8"
-  (save)="save($event)"
+</div> -->
+<!-- <kendo-dialog  *ngIf="open"  [minWidth]="250" [width]="450">
+  <image-drawing [src]="imageUrl" outputMimeType="'image/jpeg'"
+  outputQuality="1"  forceSizeExport="true" (save)="save($event)" 
   (cancel)="open=false"></image-drawing>
-</kendo-dialog>
+</kendo-dialog> -->
+<!-- (save)="save($event)" -->
+<!-- <ng-container > -->
+  <!-- <img [src]="imageUrl" id="select-position" (click)="Click($event)" > -->
+  <!-- <app-imagemap [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)" canEdit="false"></app-imagemap>
+</ng-container> -->
+<img src="assets/images.png" usemap="#image-map" class="mapper">
+
+<map name="image-map">
+   <area alt="Right door" title="Right door" class="iopacity60 iborder icolor2F32FF" coords="112,76,153,75,189,93,206,107,210,115,197,132,182,133,163,132,143,132,133,131,118,132" shape="poly" (click)="Whichpart(Rightdoor.title)" #Rightdoor>
+    <area  alt="Front wheel" title="Front wheel" coords="79,135,20" shape="circle" class="iopacity60 noborder icolor00ff00"  (click)="Whichpart(Frontwheel.title)" #Frontwheel>
+    <area  alt="Back wheel" title="Back wheel"  coords="237,135,18" shape="circle" class="iopacity60 noborder icolor00ff00" (click)="Whichpart(Backwheel.title)" #Backwheel>
+    <area  alt="Front side" title="Front side" class="iopacity60 iborder icolorFF0000"   coords="197,140,208,118,200,97,218,99,235,99,252,99,266,103,278,110,279,124,280,139,261,140,254,118,235,113,221,117,214,128,215,142" shape="poly" (click)="Whichpart(Frontside.title)" #Frontside>
+    <area  alt="Back siede" title="Back siede" class="iopacity60 iborder icolorFF0000" coords="106,79,113,85,117,131,102,134,92,119,78,115,68,115,62,118,57,124,56,139,34,138,25,131,25,119,25,108,31,101,36,95" shape="poly" (click)="Whichpart(Backsiede.title)" #Backsiede>
+</map>

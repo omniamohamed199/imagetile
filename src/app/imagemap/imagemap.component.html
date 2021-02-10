@@ -1,0 +1,10 @@
+<div id="image-container" >
+	<img [src]="src">
+  <div class="coordinates-container">
+    <div class="area" [ngStyle]="getCoordinateStyle(coordinate)" [title]="coordinate.name" 
+    *ngFor="let coordinate of coordinates" (click)="onAreaClick(coordinate)" (contextmenu)="onAreaEdit(coordinate)">
+    {{coordinate.name}}
+    <img [src]="imageUrl" id="select-position" *ngIf="coordinate.name === 'Marc'" style="position: absolute;">
+    </div>
+  </div>
+</div>
