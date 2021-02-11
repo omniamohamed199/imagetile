@@ -14,12 +14,27 @@
   <!-- <img [src]="imageUrl" id="select-position" (click)="Click($event)" > -->
   <!-- <app-imagemap [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)" canEdit="false"></app-imagemap>
 </ng-container> -->
-<img src="assets/images.png" usemap="#image-map" class="mapper">
+
+<img src="assets/dsBuffer.bmp.png" usemap="#image-map" class="mapper"> 
 
 <map name="image-map">
-   <area alt="Right door" title="Right door" class="iopacity60 iborder icolor2F32FF" coords="112,76,153,75,189,93,206,107,210,115,197,132,182,133,163,132,143,132,133,131,118,132" shape="poly" (click)="Whichpart(Rightdoor.title)" #Rightdoor>
-    <area  alt="Front wheel" title="Front wheel" coords="79,135,20" shape="circle" class="iopacity60 noborder icolor00ff00"  (click)="Whichpart(Frontwheel.title)" #Frontwheel>
-    <area  alt="Back wheel" title="Back wheel"  coords="237,135,18" shape="circle" class="iopacity60 noborder icolor00ff00" (click)="Whichpart(Backwheel.title)" #Backwheel>
-    <area  alt="Front side" title="Front side" class="iopacity60 iborder icolorFF0000"   coords="197,140,208,118,200,97,218,99,235,99,252,99,266,103,278,110,279,124,280,139,261,140,254,118,235,113,221,117,214,128,215,142" shape="poly" (click)="Whichpart(Frontside.title)" #Frontside>
-    <area  alt="Back siede" title="Back siede" class="iopacity60 iborder icolorFF0000" coords="106,79,113,85,117,131,102,134,92,119,78,115,68,115,62,118,57,124,56,139,34,138,25,131,25,119,25,108,31,101,36,95" shape="poly" (click)="Whichpart(Backsiede.title)" #Backsiede>
+    <area  alt="FrontDoor" title="FrontDoor" class="iopacity60 iborder icolor2F32FF" coords="209,153,190,154,175,154,156,161,146,170,135,176,123,187,127,196,130,205,132,216,133,229,142,231,157,231,173,231,187,230,207,231,207,221,208,210,208,200,206,191,208,170" shape="poly" #FrontDoor (click)="Whichpart(FrontDoor.title)">
+    <area  alt="BackDoor" title="BackDoor" class="iopacity60 iborder icolor2F32FF" coords="212,154,224,154,239,154,253,154,262,155,272,164,282,174,282,186,282,197,270,204,266,208,258,218,254,230,245,230,231,230,217,230,210,230,210,213,207,197,207,182,209,166" shape="poly" #BackDoor (click)="Whichpart(BackDoor.title)">
+    <area  alt="BackPeice" title="BackPeice" class="iopacity60 iborder icolorFF0000" coords="278,153,275,158,275,164,282,174,284,186,278,196,266,210,258,221,255,228,258,234,266,234,269,240,273,247,281,252,293,252,302,249,307,241,310,235,317,233,324,239,335,237,350,238,353,227,359,216,354,204,352,195,354,178,346,176,331,177,318,170,302,160,290,156" shape="poly" #BackPeice (click)="Whichpart(BackPeice.title)">
+    <area alt="FrontPiece" title="FrontPiece"  class="iopacity60 iborder icolorFF0000" coords="126,179,114,179,101,179,88,180,73,184,59,187,42,197,38,206,37,217,37,225,37,232,38,239,52,239,60,237,69,237,74,229,74,237,83,246,95,252,111,251,119,241,122,233,134,238,133,221,130,205,123,195,123,187" shape="poly" #FrontPiece (click)="Whichpart(FrontPiece.title)" >
 </map>
+<div  [hidden]="!open" >
+<kendo-dialog   >
+  <div style="position: absolute;width: 200px">
+    <button (click)="saveIm()">saveIm</button>
+    <button (click)="open=false">Cancel</button>
+    <button (click)="undo()">undo</button>
+    <button (click)="bErasing=true">bErasing</button>
+  </div>
+  <canvas #canvas ></canvas>
+</kendo-dialog>
+</div>
+
+
+
+
