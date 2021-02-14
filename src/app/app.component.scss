@@ -1,34 +1,11 @@
-#dst-canvas {
-	position: absolute;
-	outline: 1px solid;
-	width: 256px;
-	bottom: 10px;
-	right: 10px;
-	z-index: 10;
-  }
-  
-  #preview-area {
-	position: absolute;
-    top: 9px;
-	background:black;
-    bottom: 0px;
-    left: 0px;
-    right: 0%;
-    overflow: hidden;
-  }
-  
-  #select-position {
-	position: absolute;
-  border: 1px solid;
-	z-index: 1;
-  }
-  .container{
-    width: 400px;
-    height: 400px;
-  }
-  canvas{
-    margin-top: 66px;
+canvas{
     box-shadow: 2px 2px 6px 2px lightgrey;
+    // background-image: url('../assets/2.png');
+    // background-position: center center;
+    // background-size: cover;
   }
-  
+  i{
+    margin: 0px 8px;
+    color: black;
+  }
   

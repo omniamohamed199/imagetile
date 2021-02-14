@@ -1,40 +1,47 @@
-<!-- <div>
-  <div id="preview-area">
-    <div id="select-position"></div>
-    <canvas id="dst-canvas" width="256" height="256" hidden></canvas>
-  </div>
-</div> -->
-<!-- <kendo-dialog  *ngIf="open"  [minWidth]="250" [width]="450">
-  <image-drawing [src]="imageUrl" outputMimeType="'image/jpeg'"
-  outputQuality="1"  forceSizeExport="true" (save)="save($event)" 
-  (cancel)="open=false"></image-drawing>
-</kendo-dialog> -->
-<!-- (save)="save($event)" -->
-<!-- <ng-container > -->
-  <!-- <img [src]="imageUrl" id="select-position" (click)="Click($event)" > -->
-  <!-- <app-imagemap [src]="image" [coordinates]="coordinates" (onClick)="getClick($event)" canEdit="false"></app-imagemap>
-</ng-container> -->
+<div style="left: 84px;top: 74px;">
+  <img src="assets/2.png" usemap="#image-map" class="mapper">
 
-<img src="assets/dsBuffer.bmp.png" usemap="#image-map" class="mapper"> 
-
-<map name="image-map">
-    <area  alt="FrontDoor" title="FrontDoor" class="iopacity60 iborder icolor2F32FF" coords="209,153,190,154,175,154,156,161,146,170,135,176,123,187,127,196,130,205,132,216,133,229,142,231,157,231,173,231,187,230,207,231,207,221,208,210,208,200,206,191,208,170" shape="poly" #FrontDoor (click)="Whichpart(FrontDoor.title)">
-    <area  alt="BackDoor" title="BackDoor" class="iopacity60 iborder icolor2F32FF" coords="212,154,224,154,239,154,253,154,262,155,272,164,282,174,282,186,282,197,270,204,266,208,258,218,254,230,245,230,231,230,217,230,210,230,210,213,207,197,207,182,209,166" shape="poly" #BackDoor (click)="Whichpart(BackDoor.title)">
-    <area  alt="BackPeice" title="BackPeice" class="iopacity60 iborder icolorFF0000" coords="278,153,275,158,275,164,282,174,284,186,278,196,266,210,258,221,255,228,258,234,266,234,269,240,273,247,281,252,293,252,302,249,307,241,310,235,317,233,324,239,335,237,350,238,353,227,359,216,354,204,352,195,354,178,346,176,331,177,318,170,302,160,290,156" shape="poly" #BackPeice (click)="Whichpart(BackPeice.title)">
-    <area alt="FrontPiece" title="FrontPiece"  class="iopacity60 iborder icolorFF0000" coords="126,179,114,179,101,179,88,180,73,184,59,187,42,197,38,206,37,217,37,225,37,232,38,239,52,239,60,237,69,237,74,229,74,237,83,246,95,252,111,251,119,241,122,233,134,238,133,221,130,205,123,195,123,187" shape="poly" #FrontPiece (click)="Whichpart(FrontPiece.title)" >
-</map>
-<div  [hidden]="!open" >
-<kendo-dialog   >
-  <div style="position: absolute;width: 200px">
-    <button (click)="saveIm()">saveIm</button>
-    <button (click)="open=false">Cancel</button>
-    <button (click)="undo()">undo</button>
-    <button (click)="bErasing=true">bErasing</button>
-  </div>
-  <canvas #canvas ></canvas>
-</kendo-dialog>
+  <map name="image-map">
+    <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <polygon class="hoverable" title="BackDoor" class="iopacity60 iborder icolor2F32FF" #BackDoor (click)="Whichpart(BackDoor.title)" points="25,229,25,245,25,259,28,278,36,297,45,311,54,333,64,348,72,352,89,353,105,346,116,344,133,342,140,333,140,316,140,297,140,272,140,251,139,236,128,230,101,231,80,233,64,233,38,231" onclick="alert('I am click functionality!');" />
+    </svg>
+    <!-- <area title="FrontDoor" class="iopacity60 iborder icolor2F32FF" #FrontDoor (click)="Whichpart(FrontDoor.title)"
+      coords="25,229,25,245,25,259,28,278,36,297,45,311,54,333,64,348,72,352,89,353,105,346,116,344,133,342,140,333,140,316,140,297,140,272,140,251,139,236,128,230,101,231,80,233,64,233,38,231"
+      shape="poly"> -->
+    <area title="BackDoor" class="iopacity60 iborder icolor2F32FF" #BackDoor (click)="Whichpart(BackDoor.title)"
+      coords="26,223,26,204,25,184,28,165,37,142,57,126,72,124,91,126,99,139,109,151,121,157,132,165,139,174,139,185,139,202,139,217,139,228,118,232,93,232,73,233,45,228,32,228"
+      shape="poly">
+    <area alt="BackPeice" title="BackPeice" class="iopacity60 iborder icolorFF0000" #BackPeice
+      (click)="Whichpart(BackPeice.title)"
+      coords="63,356,63,372,63,392,69,420,73,437,78,459,86,474,98,483,106,488,115,488,128,488,142,488,149,479,150,462,153,434,139,429,119,429,105,416,97,404,95,387,100,370,115,357,137,350,149,344,150,360,157,364,164,371,170,384,169,399,160,412,148,422,133,422,115,416,105,404,105,390,105,379,113,364,124,358,132,358,147,340,147,340,124,340,109,346,96,349,86,355,71,355"
+      shape="poly">
+    <area alt="FrontPiece" title="FrontPiece" class="iopacity60 iborder icolorFF0000" #FrontPiece
+      (click)="Whichpart(FrontPiece.title)"
+      coords="27,132,27,117,37,96,49,73,54,61,59,39,59,22,74,21,87,24,99,22,112,18,124,13,129,21,142,21,145,28,146,39,147,48,149,55,149,64,144,72,149,81,159,88,165,97,170,113,169,123,164,135,155,142,145,146,128,147,145,155,145,162,145,169,129,163,114,153,102,144,86,126,71,125,58,125,47,135,41,138,34,148"
+      shape="poly">
+  </map>
 </div>
 
+<div [hidden]="!open">
+  <kendo-dialog>
+    <canvas #canvas></canvas>
+    <div
+      style="position: absolute;bottom: 9px;width: 68%;box-shadow: 2px 2px 6px 2px lightgrey;height: 84px;left: 58px;">
+      <div style="margin: 10px;">
+        <i class="zmdi zmdi-close-circle zmdi-hc-2x" (click)="close()"></i>
+        <i class="zmdi zmdi-undo zmdi-hc-2x" (click)="undo()"></i>
+        <i class="zmdi zmdi-delete zmdi-hc-2x" (click)="clear()"></i>
+        <img src="assets/erase.png" alt="" (click)="bErasing=true">
+        <i class="zmdi zmdi-brush zmdi-hc-2x" (click)="bErasing=false"
+          [ngStyle]="{'color':bErasing ?'gray':'black'}"></i>
+        <i class="zmdi zmdi-save zmdi-hc-2x" (click)="saveIm()"></i>
+      </div>
+      <div>
+        <kendo-colorpalette [tileSize]="16" palette="basic" value="#000000" #palette></kendo-colorpalette>
+      </div>
 
 
+    </div>
 
+  </kendo-dialog>
+</div>

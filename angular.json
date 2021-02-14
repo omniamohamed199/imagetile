@@ -34,8 +34,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/CanvasShredder.js",
-              "src/assets/Hammer.js",
               "src/assets/mapper.js"
             ]
           },
@@ -105,8 +103,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/CanvasShredder.js",
-              "src/assets/Hammer.js",
               "src/assets/mapper.js"
             ]
           }

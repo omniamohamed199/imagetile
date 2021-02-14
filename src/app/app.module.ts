@@ -13,15 +13,17 @@ import { ImageDrawingModule } from 'ngx-image-drawing';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagemapComponent } from './imagemap/imagemap.component';
+import { InputsModule } from '@progress/kendo-angular-inputs';
 
 
 
-@Injectable()
-export class MyHammerConfig extends HammerGestureConfig {
-  overrides = <any>{
-    swipe: { direction: Hammer.DIRECTION_ALL },
-  };
-}
+
+// @Injectable()
+// export class MyHammerConfig extends HammerGestureConfig {
+//   overrides = <any>{
+//     swipe: { direction: Hammer.DIRECTION_ALL },
+//   };
+// }
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,17 +31,18 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   imports: [
     BrowserModule,
-    HammerModule,
+    // HammerModule,
     AppRoutingModule,
-    ImageDrawingModule,
+    // ImageDrawingModule,
     DialogsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InputsModule
   ],
   providers: [
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig,
-    }
+    // {
+    //   // provide: HAMMER_GESTURE_CONFIG,
+    //   // useClass: MyHammerConfig,
+    // }
   ],
   bootstrap: [AppComponent]
 })

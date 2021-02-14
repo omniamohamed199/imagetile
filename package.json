@@ -23,6 +23,7 @@
     "@progress/kendo-angular-buttons": "^6.0.0",
     "@progress/kendo-angular-common": "^2.0.0",
     "@progress/kendo-angular-dialog": "^5.0.0",
+    "@progress/kendo-angular-inputs": "^7.1.2",
     "@progress/kendo-angular-l10n": "^3.0.0",
     "@progress/kendo-angular-popup": "^4.0.0",
     "@progress/kendo-licensing": "^1.0.2",
@@ -34,7 +35,9 @@
     "ngx-image-drawing": "^1.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "@progress/kendo-angular-intl": "^3.0.0",
+    "@progress/kendo-drawing": "^1.5.12"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.2",
